@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+     
+    <title>Portfolio Website</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"></a>
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#education" >Education</a>
+            <a href="#skill" >Skills</a>
+            <a href="#experience" >Experience</a>
+            <a href="#achievements" >Achievements</a>
+            <a href="#contect" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="profile.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>VIJAY</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>I am currently pursuing my 3rd year of B.Tech in Computer Science and Engineering. With a solid foundation in front-end development, I have gained proficiency in HTML, CSS, and JavaScript. I am also skilled in programming languages like Java and Python, and I have hands-on experience with the Angular framework.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/vijay-karri-0961382a6"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/VijayGit-code"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/KarriVijay83937"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/call_me_jd2204/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn">Hire me</a>
+        </div>
+    </section>
+<section id="education">
+    <div class="education-container">
+        <h2>My Education</h2>
+        <div class="edu-boxes">
+            <div class="edu-left">
+                <div class="edu-tabs">
+                    <button class="tab-btn" onclick="showContent('BTech')">BTech</button>
+                    <button class="tab-btn" onclick="showContent('College')">College</button>
+                    <button class="tab-btn" onclick="showContent('School')">School</button>
+                </div>
+                <div class="edu-content" id="tabContent">
+                    <p>Select an option to see details.</p>
+                </div>
+            </div>
+            <div class="edu-right">
+                <div class="edu-image-box" id="imageBox">
+                    <p>Image will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showContent(tab) {
+            const tabContent = document.getElementById("tabContent");
+            const imageBox = document.getElementById("imageBox");
+
+            if (tab === 'BTech') {
+                tabContent.innerHTML = `<h2>B.Tech in Computer Science & Engineering</h2>
+                <h3>ADITYA COLLEGE OF ENGINEERING</h3>
+                <h4>2022 - 2026 | CGPA: 8.78</h4>
+                <p>Studying core computer science subjects including Data Structures, Algorithms, Operating Systems, Computer Networks, and Web Development.</p>`;
+                imageBox.innerHTML = "<img src='btech.webp' alt='BTech Image'>";
+            } else if (tab === 'College') {
+                tabContent.innerHTML = `<h2>BOARD OF INTERMEDIATE EDUCATION IN MPC</h2>
+                <h3>PRG JUNIOR COLLEGE</h3>
+                <h4>2020 - 2022 | CGPA: 9.25</h4>
+                <p>Secured top marks in the district, recognized as a College & District Topper, and awarded for academic excellence.</p>`;
+                imageBox.innerHTML = "<img src='collge.jpg' alt='College Image'>";
+            } else if (tab === 'School') {
+                tabContent.innerHTML = `<h2>BOARD OF SECONDARY EDUCATION</h2>
+                <h3>ANAND BHARATHI HIGH SCHOOL</h3>
+                <h4>2018 - 2020 | CGPA: 9.00</h4>
+                <p>Achieved high ranks, awarded certificates for academic excellence, and maintained top grades throughout school.</p>`;
+                imageBox.innerHTML = "<img src='school.png' alt='School Image'>";
+            }
+        }
+    </script>
+</section>
+
+
+
+<section id="skill">
+    
+    <div class="containerr">
+        <div class="left-panel">
+                <h1>My Technical Skills</h1>
+            <div class="skill-category" onclick="showSkills(['Java', 'Python', 'C++', 'C', 'JavaScript'])">
+                <h2>Programming Languages</h2>
+            </div>
+            <div class="skill-category" onclick="showSkills(['HTML5', 'CSS3', 'Angular',  'Spring Boot'])">
+                <h2>Web Technologies & Frameworks</h2>
+            </div>
+            <div class="skill-category" onclick="showSkills(['MySQL', 'MongoDB',  'Oracle'])">
+                <h2>Databases</h2>
+            </div>
+            <div class="skill-category" onclick="showSkills(['Power BI', 'Python (Data Science)', 'Pandas', 'NumPy', 'Matplotlib'])">
+                <h2>Data Analytics & Tools</h2>
+            </div>
+            <div class="skill-category" onclick="showSkills(['Git', 'AWS', 'Jenkins', 'Docker', 'Linux'])">
+                <h2>DevOps & Platforms</h2>
+            </div>
+        </div>
+        <div class="right-panel" id="skill-display">
+            <div class="skill-set" id="skill-set"> 
+            </div>
+        </div>
+    </div>
+    <script>
+        function showSkills(skills) {
+            const display = document.getElementById('skill-set');
+            display.innerHTML = skills.map(skill => `<div class='skill-card'>${skill}</div>`).join('');
+        }
+    </script>
+</section>
+<!-- expirences section   -->
+<section id="experience">
+    <div class="experience-container"> 
+        
+        <div class="experience-card">
+            <h3>Frontend Developer | Intern</h3>
+            <h4>Academor | 02/2024 - Present</h4>
+            <ul>
+                <li>Delivered responsive web interfaces using HTML, CSS, and JavaScript, improving page load speed by 25%.</li>
+                <li>Utilized Angular to create scalable applications, reducing code maintenance by 15%.</li>
+                <li>Successfully implemented responsive designs, boosting mobile compatibility by 100%.</li>
+                <li>Collaborated with senior developers to refine UI/UX, enhancing user satisfaction by 20%.</li>
+                <li>Integrated third-party APIs for real-time data, adding dynamic functionality to client projects.</li>
+            </ul>
+        </div>
+        
+        <div class="experience-card">
+            <h3>Java Full Stack Developer | Intern</h3>
+            <h4>Skilldzire | 05/2024 - Present</h4>
+            <ul>
+                <li>Developed a banking application with real-time transaction notifications, increasing engagement by 30%.</li>
+                <li>Optimized system performance, reducing API response times by 35%.</li>
+                <li>Collaborated with a team to improve database efficiency, enhancing overall system reliability.</li>
+                <li>Built RESTful APIs with Spring Boot, ensuring secure and scalable communication between services.</li>
+                <li>Implemented authentication and authorization features, improving platform security and user trust.</li>
+            </ul>
+        </div>
+    </div>
+    </section>
+    <section id="achievements">
+        <div class="achievements-container">
+            <!-- <h2>My Achievements</h2> -->
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <h3>Letter of Recommendation</h3>
+                    <p>Received a letter of recommendation for outstanding performance during my internship.</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>NPTEL Certificate with Silver Medal</h3>
+                    <p>Awarded a silver medal in the NPTEL course on IoT for academic excellence and top performance.</p>
+                </div>
+            </div>
+            <div class="counter"> 
+                <div class="lc">
+                    <!-- <h3>LeetCode DSA Problems Solved</h3> -->
+                    <p><span id="leetcode-count">0 +</span>+  LeetCode DSA Problems Solved</p>
+                </div>
+                <div class="gg">
+                    <!-- <h3>GeeksforGeeks DSA Problems Solved</h3> -->
+                    <p><span id="gfg-count">0 +</span>+  GeeksforGeeks DSA Problems Solved</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function animateCount(id, target) {
+                let count = 0;
+                const interval = setInterval(() => {
+                    count++;
+                    document.getElementById(id).innerText = count;
+                    if (count === target) {
+                        clearInterval(interval);
+                    }
+                }, 50); // Adjust speed here
+            }
+        
+            // Start animations when the page loads
+            window.onload = () => {
+                animateCount("leetcode-count", 140);
+                animateCount("gfg-count", 30);
+            };
+        </script>
+    </section>
+    
+     
+    <section id="contect">
+        <div class="contact-container">
+             
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" rows="6" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-links">
+                <h3><i class="fa-solid fa-envelope"></i>   vijaykarri220910125@gmail.com<span style="margin-left: 20px;"></span><i class="fa-solid fa-phone"></i>   8143957022</h3>
+                <a href="https://www.linkedin.com/in/vijay-karri-0961382a6"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/VijayGit-code"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/KarriVijay83937"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/call_me_jd2204"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://mail.google.com/"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+     
+</body>
+</html>
